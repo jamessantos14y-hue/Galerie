@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie — arte em circulação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="loginScreen" class="login-screen">
+  <div class="login-visual">
+    <div class="login-brand">
+      <div class="logo-box">G</div>
+      <div>
+        <strong>Galerie</strong>
+        <small>arte em circulação</small>
+      </div>
+    </div>
+
+    <div class="login-content">
+      <span class="eyebrow">ARTE • CULTURA • CONHECIMENTO</span>
+      <h1>Um lugar onde a arte <em>circula.</em></h1>
+      <p>Descubra artistas, acompanhe processos criativos, encontre obras e transforme conexões em oportunidades.</p>
+
+      <div class="login-features">
+        <div class="feature-card">
+          <span>01</span>
+          <i class="fa-solid fa-palette"></i>
+          <strong>Descubra</strong>
+          <small>novos artistas</small>
+        </div>
+        <div class="feature-card">
+          <span>02</span>
+          <i class="fa-solid fa-store"></i>
+          <strong>Compre</strong>
+          <small>arte independente</small>
+        </div>
+        <div class="feature-card">
+          <span>03</span>
+          <i class="fa-solid fa-users"></i>
+          <strong>Conecte-se</strong>
+          <small>com a comunidade</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-quote">
+      “Uma rede de circulação de arte, cultura e conhecimentos.”
+    </div>
+  </div>
+
+  <div class="login-form-area">
+    <div class="login-form-box">
+      <div class="mobile-login-logo">
+        <div class="logo-box">G</div>
+        <strong>Galerie</strong>
+      </div>
+
+      <span class="eyebrow purple-text">ACESSO À EXPOSIÇÃO</span>
+      <h2>Entre na Galerie</h2>
+      <p>Continue explorando artistas, histórias e novas formas de expressão.</p>
+
+      <form id="loginForm">
+        <label>Email</label>
+        <div class="input-wrapper">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="email" value="artista@galerie.com" required>
+        </div>
+
+        <label>Senha</label>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-lock"></i>
+          <input id="password" type="password" value="123456" required>
+          <button type="button" id="showPassword" aria-label="Mostrar senha">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+
+        <button class="primary-button login-button" type="submit">
+          Entrar <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <div class="separator"><span></span>ou<span></span></div>
+
+      <button id="demoLogin" class="demo-button">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        Entrar na demonstração
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="app" class="app hidden">
+  <aside class="sidebar">
+    <div>
+      <div class="brand">
+        <div class="logo-box">G</div>
+        <div>
+          <strong>Galerie</strong>
+          <small>rede criativa</small>
+        </div>
+      </div>
+
+      <nav class="side-nav">
+        <button class="nav-item active" data-page="home"><i class="fa-solid fa-house"></i><span>Início</span></button>
+        <button class="nav-item" data-page="explore"><i class="fa-solid fa-compass"></i><span>Explorar</span></button>
+        <button class="nav-item" data-page="market"><i class="fa-solid fa-store"></i><span>Mercado</span></button>
+        <button class="nav-item" data-page="boost"><i class="fa-solid fa-bullhorn"></i><span>Impulsionar</span></button>
+        <button class="nav-item" data-page="notifications">
+          <span class="notification-icon"><i class="fa-regular fa-bell"></i><b></b></span>
+          <span>Notificações</span>
+        </button>
+        <button class="nav-item" data-page="messages"><i class="fa-regular fa-message"></i><span>Mensagens</span></button>
+        <button class="nav-item" data-page="saved"><i class="fa-regular fa-bookmark"></i><span>Salvos</span></button>
+        <button class="nav-item" data-page="profile"><i class="fa-regular fa-user"></i><span>Perfil</span></button>
+      </nav>
+
+      <button id="publishButton" class="sidebar-publish">
+        <i class="fa-solid fa-plus"></i>
+        <span>Publicar</span>
+      </button>
+    </div>
+
+    <div class="sidebar-bottom">
+      <button id="themeToggle" class="theme-toggle">
+        <i class="fa-regular fa-moon"></i>
+        <span>Tema escuro</span>
+      </button>
+
+      <div class="sidebar-user">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="">
+        <div>
+          <strong>Luana Reis</strong>
+          <span>@luana.art</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <section id="page-home" class="page active-page">
+      <header class="feed-header">
+        <div class="feed-title">
+          <span>EXPOSIÇÃO CONTÍNUA / 01</span>
+          <strong>Em circulação</strong>
+        </div>
+        <div class="feed-tabs">
+          <button class="feed-tab active" data-feed="forYou">Para você</button>
+          <button class="feed-tab" data-feed="following">Seguindo</button>
+        </div>
+      </header>
+
+      <div class="composer">
+        <div class="composer-index">+</div>
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="">
+        <div class="composer-area">
+          <span class="composer-label">NOVO REGISTRO</span>
+          <textarea id="postText" placeholder="Compartilhe arte, ideias ou processos..."></textarea>
+
+          <div id="imagePreview" class="image-preview hidden"></div>
+
+          <div id="saleFields" class="sale-fields hidden">
+            <input id="artName" type="text" placeholder="Nome da obra">
+            <input id="artPrice" type="number" placeholder="Preço">
+          </div>
+
+          <div class="composer-actions">
+            <div>
+              <label class="icon-button">
+                <i class="fa-regular fa-image"></i>
+                <input id="postImage" type="file" accept="image/*" hidden>
+              </label>
+              <button id="saleToggle" class="icon-button" title="Vender esta obra"><i class="fa-solid fa-tag"></i></button>
+              <button class="icon-button" title="Emoji"><i class="fa-regular fa-face-smile"></i></button>
+            </div>
+            <button id="createPost" class="small-primary">Publicar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="feed-categories">
+        <button class="category-chip active" data-category="Todos">Todos</button>
+        <button class="category-chip" data-category="Pintura">Pintura</button>
+        <button class="category-chip" data-category="Ilustração">Ilustração</button>
+        <button class="category-chip" data-category="Fotografia">Fotografia</button>
+        <button class="category-chip" data-category="Arte digital">Arte digital</button>
+      </div>
+
+      <div id="feed"></div>
+
+      <div class="feed-loader">
+        <div class="spinner"></div>
+        Descobrindo mais arte...
+      </div>
+    </section>
+
+    <section id="page-explore" class="page">
+      <header class="page-header">
+        <div>
+          <span class="header-label">MAPA DE DESCOBERTA</span>
+          <h1>Explorar</h1>
+          <p>Novas formas, vozes, técnicas e histórias.</p>
+        </div>
+      </header>
+
+      <div class="page-padding">
+        <div class="big-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="exploreSearch" type="text" placeholder="Buscar artistas, estilos, técnicas...">
+        </div>
+
+        <div class="section-heading">
+          <span>EXPLORE POR INTERESSE</span>
+          <h2>Salas da Galerie</h2>
+        </div>
+
+        <div class="explore-grid">
+          <button class="explore-card purple-card" data-explore-category="Pintura">
+            <span>01</span><i class="fa-solid fa-palette"></i><strong>Pintura</strong><small>2,4 mil obras</small>
+          </button>
+          <button class="explore-card cyan-card" data-explore-category="Fotografia">
+            <span>02</span><i class="fa-solid fa-camera"></i><strong>Fotografia</strong><small>1,8 mil obras</small>
+          </button>
+          <button class="explore-card" data-explore-category="Ilustração">
+            <span>03</span><i class="fa-solid fa-pen-nib"></i><strong>Ilustração</strong><small>3,1 mil obras</small>
+          </button>
+          <button class="explore-card" data-explore-category="Escultura">
+            <span>04</span><i class="fa-solid fa-cube"></i><strong>Escultura</strong><small>640 obras</small>
+          </button>
+          <button class="explore-card" data-explore-category="Arte digital">
+            <span>05</span><i class="fa-solid fa-display"></i><strong>Arte digital</strong><small>4,3 mil obras</small>
+          </button>
+          <button class="explore-card" data-explore-category="Cultura">
+            <span>06</span><i class="fa-solid fa-masks-theater"></i><strong>Cultura</strong><small>987 registros</small>
+          </button>
+        </div>
+
+        <div class="section-heading">
+          <span>EM EXPOSIÇÃO</span>
+          <h2>Artistas para descobrir</h2>
+        </div>
+        <div id="exploreArtists" class="artist-grid"></div>
+      </div>
+    </section>
+
+    <section id="page-market" class="page">
+      <header class="page-header market-header">
+        <div>
+          <span class="header-label">CATÁLOGO / GALERIE MARKET</span>
+          <h1>Mercado</h1>
+          <p>Obras independentes, diretamente de quem cria.</p>
+        </div>
+        <button id="sellArtwork" class="header-action"><i class="fa-solid fa-plus"></i> Vender uma obra</button>
+      </header>
+
+      <div class="page-padding">
+        <section class="market-hero">
+          <div class="market-hero-content">
+            <span>CURADORIA GALERIE / EDIÇÃO 01</span>
+            <h2>Arte original.<br><em>Histórias reais.</em></h2>
+            <p>Conheça obras selecionadas da comunidade e apoie diretamente quem cria.</p>
+            <button id="heroExplore" class="hero-button">Explorar coleção <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+
+          <div class="market-hero-art">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=900" alt="">
+            <div class="hero-art-info">
+              <div>
+                <span>OBRA EM DESTAQUE</span>
+                <strong>Entre Sol e Terra</strong>
+              </div>
+              <span class="hero-price">R$ 780</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="market-tools">
+          <div class="market-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="marketSearch" type="text" placeholder="Buscar obra ou artista...">
+          </div>
+
+          <select id="marketSort">
+            <option value="featured">Destaques</option>
+            <option value="low">Menor preço</option>
+            <option value="high">Maior preço</option>
+          </select>
+        </div>
+
+        <div class="market-categories">
+          <button class="market-chip active" data-market-category="Todos">Todos</button>
+          <button class="market-chip" data-market-category="Pintura">Pintura</button>
+          <button class="market-chip" data-market-category="Ilustração">Ilustração</button>
+          <button class="market-chip" data-market-category="Fotografia">Fotografia</button>
+          <button class="market-chip" data-market-category="Arte digital">Arte digital</button>
+          <button class="market-chip" data-market-category="Artesanato">Artesanato</button>
+        </div>
+
+        <div class="market-section-title">
+          <div>
+            <span>OBRAS DISPONÍVEIS</span>
+            <h2>Encontre algo que fale com você</h2>
+          </div>
+          <span id="marketCount"></span>
+        </div>
+
+        <div id="marketGrid" class="market-grid"></div>
+      </div>
+    </section>
+
+    <section id="page-boost" class="page">
+      <header class="page-header">
+        <div>
+          <span class="header-label">GALERIE / AMPLIFICAÇÃO</span>
+          <h1>Tenha mais alcance</h1>
+          <p>Faça sua arte circular para além da sua bolha.</p>
+        </div>
+      </header>
+
+      <div class="page-padding">
+        <section class="boost-hero">
+          <div class="boost-hero-content">
+            <span>IMPULSIONE SUA ARTE</span>
+            <h2>Sua arte merece <em>ser descoberta.</em></h2>
+            <p>Escolha uma publicação, defina o público e simule uma campanha patrocinada dentro da Galerie.</p>
+
+            <div class="boost-hero-stats">
+              <div><strong>+ alcance</strong><span>nas publicações</span></div>
+              <div><strong>+ visitas</strong><span>ao perfil</span></div>
+              <div><strong>+ vendas</strong><span>em potencial</span></div>
+            </div>
+          </div>
+
+          <div class="boost-preview">
+            <div class="boost-preview-header">
+              <span>PATROCINADO / GALERIE</span>
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+
+            <div class="boost-preview-user">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="">
+              <div><strong>Luana Reis</strong><span>artista visual</span></div>
+            </div>
+
+            <p>Uma das minhas novas obras da série Memórias e Natureza.</p>
+            <img class="boost-preview-image" src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=700" alt="">
+
+            <div class="boost-preview-actions">
+              <span><i class="fa-regular fa-heart"></i> 482</span>
+              <span><i class="fa-regular fa-comment"></i> 38</span>
+              <span><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+            </div>
+          </div>
+        </section>
+
+        <div class="section-heading">
+          <span>ESCOLHA O ALCANCE</span>
+          <h2>Planos de impulsionamento</h2>
+        </div>
+
+        <div class="boost-plans">
+          <article class="boost-plan" data-plan="Impulso Inicial" data-price="9.90">
+            <div class="plan-number">01</div>
+            <div class="plan-icon"><i class="fa-solid fa-seedling"></i></div>
+            <span class="plan-label">PARA COMEÇAR</span>
+            <h3>Impulso Inicial</h3>
+            <p class="plan-description">Ideal para dar visibilidade extra a uma nova publicação.</p>
+            <div class="plan-price"><strong>R$ 9,90</strong><span>por campanha</span></div>
+            <div class="plan-reach"><i class="fa-solid fa-users"></i><div><strong>1.000 – 2.500</strong><span>alcance estimado</span></div></div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Destaque por 24 horas</li>
+              <li><i class="fa-solid fa-check"></i>Público interessado em arte</li>
+              <li><i class="fa-solid fa-check"></i>Relatório básico</li>
+            </ul>
+            <button class="select-plan">Escolher plano</button>
+          </article>
+
+          <article class="boost-plan featured" data-plan="Destaque" data-price="24.90">
+            <div class="popular-badge">MAIS ESCOLHIDO</div>
+            <div class="plan-number">02</div>
+            <div class="plan-icon"><i class="fa-solid fa-bolt"></i></div>
+            <span class="plan-label">MAIS VISIBILIDADE</span>
+            <h3>Destaque</h3>
+            <p class="plan-description">Para alcançar novas pessoas e aumentar as interações.</p>
+            <div class="plan-price"><strong>R$ 24,90</strong><span>por campanha</span></div>
+            <div class="plan-reach"><i class="fa-solid fa-users"></i><div><strong>5.000 – 10.000</strong><span>alcance estimado</span></div></div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Destaque por 3 dias</li>
+              <li><i class="fa-solid fa-check"></i>Segmentação por categoria</li>
+              <li><i class="fa-solid fa-check"></i>Prioridade no Explorar</li>
+              <li><i class="fa-solid fa-check"></i>Relatório de desempenho</li>
+            </ul>
+            <button class="select-plan">Escolher plano</button>
+          </article>
+
+          <article class="boost-plan" data-plan="Galerie Pro" data-price="49.90">
+            <div class="plan-number">03</div>
+            <div class="plan-icon"><i class="fa-solid fa-rocket"></i></div>
+            <span class="plan-label">MÁXIMO ALCANCE</span>
+            <h3>Galerie Pro</h3>
+            <p class="plan-description">Para lançamentos, exposições e vendas importantes.</p>
+            <div class="plan-price"><strong>R$ 49,90</strong><span>por campanha</span></div>
+            <div class="plan-reach"><i class="fa-solid fa-users"></i><div><strong>15.000 – 30.000</strong><span>alcance estimado</span></div></div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Destaque por 7 dias</li>
+              <li><i class="fa-solid fa-check"></i>Segmentação avançada</li>
+              <li><i class="fa-solid fa-check"></i>Destaque no Mercado</li>
+              <li><i class="fa-solid fa-check"></i>Prioridade no feed</li>
+              <li><i class="fa-solid fa-check"></i>Relatório completo</li>
+            </ul>
+            <button class="select-plan">Escolher plano</button>
+          </article>
+        </div>
+
+        <section class="boost-configuration">
+          <div class="boost-config-header">
+            <span>CONFIGURAÇÃO DA CAMPANHA</span>
+            <h2>Escolha o que deseja promover</h2>
+          </div>
+
+          <div class="boost-form-grid">
+            <div class="boost-form-card">
+              <label>Publicação</label>
+              <div class="boost-select-post">
+                <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=150" alt="">
+                <div><strong>Memórias e Natureza</strong><span>Publicado há 2 horas</span></div>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+
+            <div class="boost-form-card">
+              <label>Objetivo da campanha</label>
+              <select>
+                <option>Mais visualizações</option>
+                <option>Mais visitas ao perfil</option>
+                <option>Mais interações</option>
+                <option>Mais vendas</option>
+              </select>
+            </div>
+
+            <div class="boost-form-card">
+              <label>Público</label>
+              <select>
+                <option>Pessoas interessadas em arte</option>
+                <option>Pintura</option>
+                <option>Fotografia</option>
+                <option>Ilustração</option>
+                <option>Arte digital</option>
+              </select>
+            </div>
+
+            <div class="boost-form-card">
+              <label>Localização</label>
+              <select>
+                <option>Todo o Brasil</option>
+                <option>Minha região</option>
+                <option>Meu estado</option>
+              </select>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="page-notifications" class="page">
+      <header class="page-header">
+        <div>
+          <span class="header-label">MOVIMENTOS / GALERIE</span>
+          <h1>Notificações</h1>
+          <p>O que está acontecendo ao redor da sua arte.</p>
+        </div>
+      </header>
+
+      <div class="notification-tabs">
+        <button class="notification-tab active" data-notification-filter="all">Todas</button>
+        <button class="notification-tab" data-notification-filter="interaction">Interações</button>
+        <button class="notification-tab" data-notification-filter="sale">Vendas</button>
+      </div>
+
+      <div id="notificationList" class="notification-list"></div>
+    </section>
+
+    <section id="page-messages" class="page messages-page">
+      <div class="messages-layout">
+        <aside class="conversation-sidebar">
+          <div class="messages-title">
+            <div><span>GALERIE / CHAT</span><h1>Mensagens</h1><p>Conversas da comunidade</p></div>
+            <button title="Nova conversa"><i class="fa-regular fa-pen-to-square"></i></button>
+          </div>
+
+          <div class="conversation-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="conversationSearch" type="text" placeholder="Buscar conversa">
+          </div>
+
+          <div id="conversationList"></div>
+        </aside>
+
+        <section class="chat-area">
+          <header class="chat-header">
+            <div>
+              <img id="chatAvatar" src="" alt="">
+              <div><strong id="chatName"></strong><span>Online recentemente</span></div>
+            </div>
+
+            <div class="chat-header-actions">
+              <button><i class="fa-solid fa-phone"></i></button>
+              <button><i class="fa-solid fa-ellipsis"></i></button>
+            </div>
+          </header>
+
+          <div id="chatMessages" class="chat-messages"></div>
+
+          <div class="chat-input">
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-regular fa-image"></i></button>
+            <input id="chatInput" type="text" placeholder="Digite uma mensagem...">
+            <button id="sendChatMessage" class="send-message"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="page-saved" class="page">
+      <header class="page-header">
+        <div>
+          <span class="header-label">ARQUIVO PESSOAL</span>
+          <h1>Salvos</h1>
+          <p>Obras e publicações que chamaram sua atenção.</p>
+        </div>
+      </header>
+
+      <div class="page-padding">
+        <div class="saved-intro">
+          <div><i class="fa-solid fa-bookmark"></i></div>
+          <div><strong>Sua coleção pessoal</strong><p>Tudo que você salvar fica organizado aqui.</p></div>
+        </div>
+
+        <div id="savedGrid" class="market-grid"></div>
+      </div>
+    </section>
+
+    <section id="page-profile" class="page">
+      <div class="profile-cover">
+        <span>ARTISTA / GALERIE / 2026</span>
+      </div>
+
+      <div class="profile-main">
+        <div class="profile-top">
+          <img class="profile-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=250" alt="">
+
+          <div class="profile-actions">
+            <button id="profileBoostButton" class="profile-boost-button"><i class="fa-solid fa-bullhorn"></i> Tenha mais alcance</button>
+            <button class="edit-profile">Editar perfil</button>
+          </div>
+        </div>
+
+        <div class="profile-info">
+          <span class="profile-kicker">ARTISTA VISUAL / PERFIL 027</span>
+          <h1>Luana Reis</h1>
+          <span>@luana.art</span>
+
+          <p>Artista visual explorando cores, memória, natureza e cultura brasileira.</p>
+
+          <div class="profile-details">
+            <span><i class="fa-solid fa-location-dot"></i> Fortaleza, CE</span>
+            <span><i class="fa-solid fa-link"></i> luanareis.art</span>
+          </div>
+
+          <div class="profile-stats">
+            <span><strong>286</strong> seguindo</span>
+            <span><strong>4,8 mil</strong> seguidores</span>
+            <span><strong>18</strong> obras vendidas</span>
+          </div>
+        </div>
+
+        <div class="profile-tabs">
+          <button class="profile-tab active" data-profile-tab="posts">Publicações</button>
+          <button class="profile-tab" data-profile-tab="works">Obras</button>
+          <button class="profile-tab" data-profile-tab="portfolio">Portfólio</button>
+          <button class="profile-tab" data-profile-tab="about">Sobre</button>
+        </div>
+
+        <div id="profileContent"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="right-index">
+      <span>GALERIE</span>
+      <strong>Índice vivo</strong>
+      <small>descoberta diária</small>
+    </div>
+
+    <div class="global-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="globalSearch" type="text" placeholder="Buscar na Galerie">
+    </div>
+
+    <section class="side-card">
+      <span class="side-label">EM EXPOSIÇÃO</span>
+      <h3>Artistas em destaque</h3>
+
+      <div class="mini-artist">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100" alt="">
+        <div><strong>Marina Costa</strong><span>@marinacosta</span></div>
+        <button class="follow-btn">Seguir</button>
+      </div>
+
+      <div class="mini-artist">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="">
+        <div><strong>Caio Nunes</strong><span>@caionunes</span></div>
+        <button class="follow-btn">Seguir</button>
+      </div>
+
+      <div class="mini-artist">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" alt="">
+        <div><strong>Beatriz Melo</strong><span>@bia.melo</span></div>
+        <button class="follow-btn">Seguir</button>
+      </div>
+    </section>
+
+    <section class="side-card">
+      <span class="side-label">EM CIRCULAÇÃO</span>
+      <h3>Conversas agora</h3>
+
+      <button class="trend" data-trend="ArteBrasileira">
+        <span>Arte</span><strong>#ArteBrasileira</strong><small>2,8 mil registros</small>
+      </button>
+      <button class="trend" data-trend="FeitoPorArtistas">
+        <span>Processo criativo</span><strong>#FeitoPorArtistas</strong><small>1,6 mil registros</small>
+      </button>
+      <button class="trend" data-trend="ArteNordestina">
+        <span>Cultura</span><strong>#ArteNordestina</strong><small>986 registros</small>
+      </button>
+    </section>
+  </aside>
+
+  <nav class="mobile-nav">
+    <button class="mobile-nav-button active" data-page="home"><i class="fa-solid fa-house"></i></button>
+    <button class="mobile-nav-button" data-page="explore"><i class="fa-solid fa-compass"></i></button>
+    <button class="mobile-market" data-page="market"><i class="fa-solid fa-store"></i></button>
+    <button class="mobile-nav-button" data-page="messages"><i class="fa-regular fa-message"></i></button>
+    <button class="mobile-nav-button" data-page="profile"><i class="fa-regular fa-user"></i></button>
+  </nav>
+</section>
+
+<div id="artModal" class="modal-overlay hidden">
+  <div class="art-modal">
+    <button id="closeArtModal" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+
+    <div class="modal-art-image">
+      <img id="modalArtworkImage" src="" alt="">
+      <span>OBRA / GALERIE</span>
+    </div>
+
+    <div class="modal-art-content">
+      <span id="modalArtworkCategory" class="header-label"></span>
+      <h2 id="modalArtworkTitle"></h2>
+
+      <div class="modal-seller">
+        <img id="modalSellerAvatar" src="" alt="">
+        <div><strong id="modalSeller"></strong><span>Artista independente</span></div>
+      </div>
+
+      <p id="modalArtworkDescription"></p>
+
+      <div class="art-specs">
+        <div><span>Técnica</span><strong id="modalTechnique"></strong></div>
+        <div><span>Ano</span><strong>2026</strong></div>
+      </div>
+
+      <div class="modal-buy-area">
+        <div><span>Preço</span><strong id="modalArtworkPrice"></strong></div>
+        <button id="buyArtworkButton">Comprar obra</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast">
+  <i class="fa-solid fa-circle-check"></i>
+  <span></span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
